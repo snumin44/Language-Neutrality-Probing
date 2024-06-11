@@ -61,6 +61,7 @@
 |100k|0.0|__+0.02__|__+0.01__|__+0.01__|0.0|+0.01|0.0|-0.01|0.0|-0.01|0.0|0.0|
 
 - Unlike the cumulative scoring results for Sentence Identification, high performance starting from the bottom layer is maintained until representation from the final layer is added. Consequently, <ins> __adding the representations from upper layers does not result in a decrease in cumulative scoring performance.__ </ins>
-- According to (Tenney et al., 2020) and ( et al., 2020), .
-
+- We would like to interpret these opposing results based on (Tenney et al., 2020) and (Vries et al., 2020). They found that tasks requiring less context information, such as POS tagging or NER, are processed in the lower layers of BERT(including mBERT), while tasks requiring more context information, such as co-reference resolution, are processed in the upper layers. 
+- Based on these findings, the Paraphrased Token Detection is a task that requires less context information and relies on representations from lower layers of the model. In that case, even if the representation from the upper layer is added, <ins> __the paraphrased token can be detected by relying on the representations from the lower layers.__ </ins>
+- In contrast, the Sentence identification is a sentence-level task that relies on more contextual information from the higher layers. As a result, <ins> __if there is little language information in the representations from the upper layers, the performance in identifying languages deteriorates.__ </ins> Note that the sentence encoders trained through contrastive learning is unable to distinguish language in the upper layers.
 ## 4. Conclusions
