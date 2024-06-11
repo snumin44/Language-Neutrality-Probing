@@ -7,7 +7,9 @@
 
 ## 2. Probing Method
 
-- A __Probing Classifier__ is used to analyze language discrimination ability of multilingual PLMs. If the PLMs' represenation  
+- A __Probing Classifier__ is used to analyze language discrimination ability of multilingual PLMs. If the PLMs' representations contain few characteristics of each language, which is the status of language neutrality, the classifier will not be able to identify the language. The classifier is trained for the following two probing tasks: __(1) Sentence Identification__ __(2) Paraphrased Token Detection__   
+
+- We train a series of classifiers using the representations from each layer of the PLMs in order to observe changes according to the layer __(layer-wise probing)__.  
 
 ## 3. Experiment
 
