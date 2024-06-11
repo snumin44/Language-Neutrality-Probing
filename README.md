@@ -31,7 +31,10 @@
 
 □ __Cumulative Scoring__
 
-<표>
+|Layer|1|2|3|4|5|6|7|8|9|10|11|12|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|cls|90.89|89.08|86.54|80.34|83.53|87.73|85.61|87.26|88.18|89.15|93.08|94.18|
+||(0.0)|(-1.81)|(-2.54)|(-6.20)|(+3.19)|(+4.20)|(-2.12)|(+1.65)|(+0.92)|(+0.97)|(+3.93)|(+1.10)|
 
 - 
 
@@ -39,9 +42,11 @@
 
 □ __Layer-wise Probing__
  
-<그래프>
+<p align="center">
+  <img src="images/token_detection_mbert.PNG" alt="example image" width="600" height="240"/>
+</p>
 
-- The upper layers of all models cannot detect paraphrased tokens. Especially, in the cases of the sentence encoders trained through contrastive learning, this pattern begins from the lower layers. It can be interpreted that contrastive learning makes it more difficult to detect a small number of tokens of other languages ​​among a large number of English tokens.
+- The upper layers of all models cannot detect paraphrased tokens. Especially, in the cases of the sentence encoders trained through contrastive learning, this pattern begins from the lower layers. It can be interpreted that <ins> __contrastive learning makes it more difficult to detect a small number of tokens of other languages ​​among a large number of English tokens__ <ins>.
 
 
 ## 4. Conclusions
