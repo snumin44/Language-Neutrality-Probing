@@ -31,12 +31,15 @@
 
 □ __Cumulative Scoring__
 
-|Layer|1|2|3|4|5|6|7|8|9|10|11|12|
+|Layer|1-1|1-2|1-3|1-4|1-5|1-6|1-7|1-8|1-9|1-10|1-11|1-12|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|cls|90.89|89.08|86.54|80.34|83.53|87.73|85.61|87.26|88.18|89.15|93.08|94.18|
-||(0.0)|(-1.81)|(-2.54)|(-6.20)|(+3.19)|(+4.20)|(-2.12)|(+1.65)|(+0.92)|(+0.97)|(+3.93)|(+1.10)|
+|cls|0.0|-1.81|-2.54|-6.20|+3.19|+4.20|-2.12|+1.65|+0.92|+0.97|+3.93|+1.10|
+|avg|0.0|0.0|-0.11|-0.02|+0.02|-0.09|+0.16|-0.09|-0.13|0.0|0.0|+0.02|
+|10k|0.0|0.0|-0.04|-0.03|-0.04|-0.09|+0.03|__-0.35__|__-0.87__|__-1.10__|__-2.73__|__-1.56__|
+|50k|0.0|0.0|+0.02|-0.09|+0.03|-0.09|-0.04|__-0.29__|__-0.22__|__-0.87__|__-0.96__|__-1.10__|
+|100k|0.0|0.0|+0.02|-0.09|+0.03|-0.09|-0.04|__-0.29__|__-0.20__|__-0.70__|__-1.35__|__-1.12__|
 
-- 
+- In the case of models trained through contrastive learning, the ability to distinguish languages decreases as representations from the upper layers (8-12) are added. This is consistent with the layers where performance declines in the layer-wise probing, and <ins> __the representations that have lost language identity in these layers appear to be preventing the model from distinguishing the language__. </ins>
 
 ### 3.2. Paraphrased Token Detection
 
@@ -48,5 +51,16 @@
 
 - The upper layers of all models cannot detect paraphrased tokens. Especially, in the cases of the sentence encoders trained through contrastive learning, this pattern begins from the lower layers. It can be interpreted that <ins> __contrastive learning makes it more difficult to detect a small number of tokens of other languages ​​among a large number of English tokens__ <ins>.
 
+□ __Cumulative Scoring__
+  
+|Layer|1-1|1-2|1-3|1-4|1-5|1-6|1-7|1-8|1-9|1-10|1-11|1-12|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|no-tune|0.0|__+0.02__|__+0.01__|__+0.01__|+0.01|0.0|0.0|0.0|0.0|0.0|0.0|-0.01|
+|10k|0.0|__+0.02__|__+0.01__|__+0.01__|0.0|0.0|0.0|0.0|0.0|-0.01|-0.03|-0.04|
+|50k|0.0|__+0.01__|__+0.01__|__+0.01__|0.0|+0.01|0.0|-0.01|0.0|0.0|-0.01|0.0|
+|100k|0.0|__+0.02__|__+0.01__|__+0.01__|0.0|+0.01|0.0|-0.01|0.0|-0.01|0.0|0.0|
+
+- Unlike the cumulative scoring results for Sentence Identification, high performance starting from the bottom layer is maintained until representation from the final layer is added. Consequently, <ins> __adding the representations from upper layers does not result in a decrease in cumulative scoring performance.__ </ins>
+- According to (Tenney et al., 2020) and ( et al., 2020), .
 
 ## 4. Conclusions
