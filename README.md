@@ -27,7 +27,7 @@
   <img src="images/sentence_identification_mbert.PNG" alt="example image" width="600" height="240"/>
 </p>
 
-- As can be seen in the graph above, contrastive learning reduces language identification information in the upper layers, causing the classifier to be confused in distinguishing the language. As the model learns more sentences through contrastive learning, this tendency becomes stronger.
+- As can be seen in the graph above, <ins> __contrastive learning reduces language identification information in the upper layers__  </ins>, causing the classifier to be confused in distinguishing the language. As the model learns more sentences through contrastive learning, this tendency becomes stronger.
 
 □ __Cumulative Scoring__
 
