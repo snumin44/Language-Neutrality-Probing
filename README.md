@@ -3,7 +3,7 @@
 
 ## 1. Introduction 
 - __Language Neutrality__, which is often called language agnostic nature, has been treated as a core concept in the field of multilingual PLMs. Since the pre-trained multilingual representations is projected ​​into the unified vector space regardless of its language, it can represent universal meaning if the representations do not include characteristics of each language.
-- It is believed that the language neutrality can be improved by alleviating the subspaces of each language in the vector space(Liboviky et al., 2020; Yang et al., 2021; Choenni and Shoutova, 2020; Xie et al., 2024). To verify this, we analyze how __Contrastive Learning__, which deconstructs the subspaces, affects the PLM's language recognition.
+- It is believed that the language neutrality can be improved by alleviating the subspaces of each language in the vector space(Liboviky et al., 2020; Yang et al., 2021; Choenni and Shoutova, 2020; Xie et al., 2022). To verify this, we analyze how __Contrastive Learning__, which deconstructs the subspaces, affects the PLM's language recognition.
 
 ## 2. Probing Method
 
@@ -55,7 +55,7 @@
   
 |Layer|1-1|1-2|1-3|1-4|1-5|1-6|1-7|1-8|1-9|1-10|1-11|1-12|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|no-tune|0.0|__+0.02__|__+0.01__|__+0.01__|+0.01|0.0|0.0|0.0|0.0|0.0|0.0|-0.01|
+|w/o tuning|0.0|__+0.02__|__+0.01__|__+0.01__|+0.01|0.0|0.0|0.0|0.0|0.0|0.0|-0.01|
 |10k|0.0|__+0.02__|__+0.01__|__+0.01__|0.0|0.0|0.0|0.0|0.0|-0.01|-0.03|-0.04|
 |50k|0.0|__+0.01__|__+0.01__|__+0.01__|0.0|+0.01|0.0|-0.01|0.0|0.0|-0.01|0.0|
 |100k|0.0|__+0.02__|__+0.01__|__+0.01__|0.0|+0.01|0.0|-0.01|0.0|-0.01|0.0|0.0|
@@ -65,3 +65,52 @@
 - Based on these findings, the Paraphrased Token Detection is a task that requires less context information and relies on representations from lower layers of the model. In that case, even if the representation from the upper layer is added, <ins> __the paraphrased token can be detected by relying on the representations from the lower layers.__ </ins>
 - In contrast, the Sentence identification is a sentence-level task that relies on more contextual information from the higher layers. As a result, <ins> __if there is little language information in the representations from the upper layers, the performance in identifying languages deteriorates.__ </ins> Note that the sentence encoders trained through contrastive learning is unable to distinguish language in the upper layers.
 ## 4. Conclusions
+
+- Contrastive learning can improve the language neutrality of representations from the upper layers.
+- Unlike the representations from the upper layer, those from the lower layers are not greatly affected in terms of language neutrality.
+- For token-level tasks that rely on lower-layer representations and require less contextual information, contrastive learning may have less impact.
+
+## Citing
+
+```
+@inproceedings{
+   title={BERT Rediscovers the Classical NLP Pipeline},
+   author={Ian Tenney, Dipanjan Das, Ellie Pavlick},
+   booktitle={Annual Meeting of the Association for Computational Linguistics (ACL)},
+   year={2019}
+}
+@inproceedings{
+   title={What’s so special about BERT’s layers?},
+   author={Wietse de Vries, Andreas van Cranenburgh, Malvina Nissim},
+   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+   year={2020}
+}
+{
+@inproceedings{
+   title={On the Language Neutrality of Pre-trained Multilingual Representations},
+   author={Jindřich Libovický, Rudolf Rosa, Alexander Fraser},
+   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+   year={2020}
+}
+{
+@inproceedings{
+   title={Universal Sentence Representation Learning with Conditional Masked Language Model},
+   author={Ziyi Yang, Yinfei Yang, Daniel Cer, Jax Law, Eric Darve},
+   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+   year={2021}
+}
+{
+@inproceedings{
+   title={Discovering Low-rank Subspaces for Language-agnostic Multilingual Representations},
+   author={Zhihui Xie, Handong Zhao, Tong Yu, Shuai Li},
+   booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
+   year={2022}
+}
+{
+@article{
+ title={What does it mean to be language-agnostic? Probing multilingual sentence encoders for typological properties},
+ author={Rochelle Choenni, Ekaterina Shutova},
+ journal={arXiv preprint arXiv:2009.12862v1},
+ year={2020}
+}
+```
