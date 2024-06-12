@@ -85,28 +85,24 @@
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2020}
 }
-{
 @inproceedings{
    title={On the Language Neutrality of Pre-trained Multilingual Representations},
    author={Jindřich Libovický, Rudolf Rosa, Alexander Fraser},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2020}
 }
-{
 @inproceedings{
    title={Universal Sentence Representation Learning with Conditional Masked Language Model},
    author={Ziyi Yang, Yinfei Yang, Daniel Cer, Jax Law, Eric Darve},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2021}
 }
-{
 @inproceedings{
    title={Discovering Low-rank Subspaces for Language-agnostic Multilingual Representations},
    author={Zhihui Xie, Handong Zhao, Tong Yu, Shuai Li},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2022}
 }
-{
 @article{
  title={What does it mean to be language-agnostic? Probing multilingual sentence encoders for typological properties},
  author={Rochelle Choenni, Ekaterina Shutova},
