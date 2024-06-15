@@ -73,31 +73,31 @@
 ## Citing
 
 ```
-@inproceedings{
+@article{
    title={BERT Rediscovers the Classical NLP Pipeline},
    author={Ian Tenney, Dipanjan Das, Ellie Pavlick},
    booktitle={Annual Meeting of the Association for Computational Linguistics (ACL)},
    year={2019}
 }
-@inproceedings{
+@article{
    title={What’s so special about BERT’s layers?},
    author={Wietse de Vries, Andreas van Cranenburgh, Malvina Nissim},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2020}
 }
-@inproceedings{
+@article{
    title={On the Language Neutrality of Pre-trained Multilingual Representations},
    author={Jindřich Libovický, Rudolf Rosa, Alexander Fraser},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2020}
 }
-@inproceedings{
+@article{
    title={Universal Sentence Representation Learning with Conditional Masked Language Model},
    author={Ziyi Yang, Yinfei Yang, Daniel Cer, Jax Law, Eric Darve},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
    year={2021}
 }
-@inproceedings{
+@article{
    title={Discovering Low-rank Subspaces for Language-agnostic Multilingual Representations},
    author={Zhihui Xie, Handong Zhao, Tong Yu, Shuai Li},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
